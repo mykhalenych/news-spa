@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const ivan = {
+        name:"Ivan",
+        age: 20,
+        sayHi(){
+          console.log(`I am, ${this.name}, my age is ${this.age} `)
+        }
+      }
+      const vasya = {
+        name: 'Vasya',
+        age: 22
+      }
+      ivan.sayHi() // I am Ivan my age is 20
+      ivan.sayHi.bind(vasya)() //I am vasya my age is 20
+    </script>
+  </body>
+</html>
