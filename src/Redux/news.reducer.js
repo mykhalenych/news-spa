@@ -1,16 +1,21 @@
-import { NEWS_LIST_RECIVED } from "./news.actions";
+import { NEWS_LIST_RECIVED, SCIENCE_LIST_RECIVED } from "./news.actions";
 
 const initialState = {
-  news: [],
+  newsList: [],
+  scienceList: []
 };
-
 const newsReducer = (state = initialState, action) => {
   switch (action.type) {
     case NEWS_LIST_RECIVED:
       return {
         ...state,
-        news: action.payload.news,
+        newsList: action.payload.newsList,
       };
+    case SCIENCE_LIST_RECIVED:
+      return{
+        ...state,
+        scienceList: action.payload.scienceList
+      }  
     default:
       return state;
   }
