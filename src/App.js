@@ -10,11 +10,10 @@ import Profile from "./views/Profile";
 import { useAuth0 } from "./react-auth0-spa";
 import ScienceNews from './views/ScienceNews'
 import FootballNews from './views/FootballNews'
+import BusinessNews from './views/BusinessNews'
 import News from './views/News'
-// styles
 import "./App.css";
 
-// fontawesome
 import initFontAwesome from "./utils/initFontAwesome";
 initFontAwesome();
 
@@ -37,7 +36,7 @@ const App = () => {
             <Route path="/news" component={News} />
             <Route path="/football" component={FootballNews} />
             <Route path="/science" component={ScienceNews} />
-      
+            <Route path="/business" component={BusinessNews} />      
             <PrivateRoute path="/profile" component={Profile} />
           </Switch>
         </Container>

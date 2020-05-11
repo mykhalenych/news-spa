@@ -81,6 +81,16 @@ export const Navigation = () => {
                   Science news
                 </NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink
+                  tag={RouterNavLink}
+                  to="/business"
+                  exact
+                  activeClassName="router-link-exact-active"
+                >
+                  Business news
+                </NavLink>
+              </NavItem>
             </Nav>
             <Nav className="d-none d-md-block" navbar>
               {!isAuthenticated && (

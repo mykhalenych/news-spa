@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import * as actions from "../Redux/news.actions";
-import { filteredFootballList } from "../Redux/news.selectors";
+import { filteredBusinessList } from "../Redux/news.selectors";
 import { connect } from "react-redux";
 import {
   Card,
@@ -15,15 +15,15 @@ import {
   CardText,
 } from "@bootstrap-styled/v4";
 
-const FootballNews = ({ getFootballList, footballList }) => {
+const BusinessNews = ({ getBusinessList, businessList }) => {
   useEffect(() => {
-    getFootballList();
+    getBusinessList();
   }, []);
 
-  if (!footballList) {
+  if (!businessList) {
     return <div>Loading...</div>;
   }
-  const news = footballList.map((item) => (
+  const news = businessList.map((item) => (
     <div key={item.id} className="d-flex justify-content-center mb-4">
       <Card>
         <CardImg top width="100%" src={item.urlToImage} alt={item.urlToImage} />
@@ -65,11 +65,11 @@ const FootballNews = ({ getFootballList, footballList }) => {
 };
 
 const mapDispatch = {
-  getFootballList: actions.getFootballList,
+  getBusinessList: actions.getBusinessList,
 };
 const mapState = (state) => {
   return {
-    footballList: filteredFootballList(state),
+    businessList: filteredBusinessList(state),
   };
 };
-export default connect(mapState, mapDispatch)(FootballNews);
+export default connect(mapState, mapDispatch)(BusinessNews);
